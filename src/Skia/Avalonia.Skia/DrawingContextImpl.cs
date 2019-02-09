@@ -617,7 +617,7 @@ namespace Avalonia.Skia
                     dashesArray[i] = (float) srcDashes[i] * paint.StrokeWidth + lengthModifier;
                 }
 
-                var pe = SKPathEffect.CreateDash(dashesArray, (float) pen.DashStyle.Offset);
+                var pe = SKPathEffect.CreateDash(dashesArray, (float) (pen.DashStyle.Offset * pen.Thickness));
 
                 paint.PathEffect = pe;
                 rv.AddDisposable(pe);
